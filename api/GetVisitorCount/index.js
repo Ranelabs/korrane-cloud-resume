@@ -1,9 +1,14 @@
 module.exports = async function (context, req) {
-    context.log("Test GetVisitorCount function hit (no Cosmos)");
+  // Hard-coded count just to test the front end
+  const count = 1;
 
-    context.res = {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-        body: { message: "Function is alive", test: true }
-    };
+  return {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: {
+      count: count
+    }
+  };
 };
