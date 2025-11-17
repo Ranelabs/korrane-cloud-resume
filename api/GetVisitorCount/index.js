@@ -33,11 +33,14 @@ module.exports = async function (context, req) {
       body: { count: newCount }
     };
   } catch (error) {
-    context.log("Error in GetVisitorCount:", error);
+  context.log("Error in GetVisitorCount:", error);
 
-    context.res = {
-      status: 500,
-      body: { error: "Failed to update visitor count" }
-    };
-  }
-};
+  context.res = {
+    status: 500,
+    body: {
+      error: "Failed to update visitor count",
+      message: error.message,
+      code: error.code
+    }
+  };
+}
