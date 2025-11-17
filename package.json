@@ -1,7 +1,7 @@
 {
-  "name": "cloud-resume",
+  "name": "swa-api",
   "version": "1.0.0",
-  "scripts": {
-    "build": "echo \"No build step needed for static site\""
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2"
   }
 }
