@@ -3,7 +3,11 @@ const { TableClient } = require("@azure/data-tables");
 module.exports = async function (context, req) {
   try {
     // Connection string from Static Web App config
-    const connectionString = process.env["Cosmos_Table_Conn"];
+    const connectionString = process.env["COSMOS_TABLE_CONN"];
+
+    if (!connectionString) {
+      throw new Error("COSMOS_TABLE_CONN is not set in app settings");
+    }
 
     // Your table name from Azure
     const tableName = "VisitorCount";
@@ -35,7 +39,7 @@ module.exports = async function (context, req) {
   } catch (error) {
     context.log("Error in GetVisitorCount:", error);
 
-    // Send the error back so we can see what's wrong if it fails
+    // Send the error back so we can see exactly what's wrong if it fails
     context.res = {
       status: 500,
       headers: { "Content-Type": "application/json" },
@@ -44,6 +48,10 @@ module.exports = async function (context, req) {
         message: error.message,
         code: error.code
       }
+    };
+  }
+};
+
     };
   }
 };
