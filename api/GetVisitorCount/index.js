@@ -1,5 +1,5 @@
 module.exports = async function (context, req) {
-  // Just a hard-coded test value to make sure everything works
+  // Simple test value so we know the function is working
   const count = 1;
 
   context.res = {
@@ -12,6 +12,3 @@ module.exports = async function (context, req) {
     }
   };
 };
-    }
-  };
-}
