@@ -1,8 +1,8 @@
 {
-  "name": "frontend",
+  "name": "api",
   "version": "1.0.0",
-  "scripts": {
-    "build": "echo \"no frontend build step\""
-  },
-  "dependencies": {}
+  "main": "index.js",
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2"
+  }
 }
