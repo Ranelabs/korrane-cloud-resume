@@ -1,7 +1,7 @@
 async function updateCounter() {
-    const response = await fetch("https://nice-pond-00275090f.3.azurestaticapps.net/api/GetVisitorCount");
-    const count = await response.text();
-    document.getElementById("counter").innerText = count;
+  const response = await fetch("/api/GetVisitorCount"); // better to use relative path
+  const data = await response.json();
+  document.getElementById("counter").innerText = data.count;
 }
 
 updateCounter();
