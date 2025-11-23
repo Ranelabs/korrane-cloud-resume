@@ -1,11 +1,12 @@
 module.exports = async function (context, req) {
-  context.log('HTTP trigger function processed a request.');
-
-  const body = { message: 'Hello from the API' };
+  context.log('GetVisitorCount test function hit');
 
   context.res = {
     status: 200,
     headers: { 'Content-Type': 'application/json' },
-    body
+    body: {
+      message: 'API is working',
+      time: new Date().toISOString()
+    }
   };
 };
