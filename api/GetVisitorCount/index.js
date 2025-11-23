@@ -5,7 +5,3 @@ module.exports = async function (context, req) {
     body: { count: 1 }
   };
 };
-
-    };
-  }
-};
