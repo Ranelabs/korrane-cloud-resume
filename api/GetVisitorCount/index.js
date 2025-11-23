@@ -1,7 +1,7 @@
 // api/GetVisitorCount/index.js
 const { TableClient } = require("@azure/data-tables");
 
-const connectionString = process.env.Cosmos_Table_Conn; // must match your app setting name
+const connectionString = process.env.COSMOS_TABLE_CONN; // must match your app setting name
 const tableName = "VisitorCount"; // you can rename if you want
 
 module.exports = async function (context, req) {
