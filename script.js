@@ -1,19 +1,11 @@
-async function updateCounter() {
+async function loadVisitorCount() {
   try {
-    const response = await fetch("/api/GetVisitorCount");
-    const data = await response.json();
-    console.log("Visitor count data:", data);
-
-    const counterElement = document.getElementById("visitor-count");
-    if (!counterElement) {
-      console.error('No element with id "visitor-count" found.');
-      return;
-    }
-
-    counterElement.innerText = data.count;
-  } catch (error) {
-    console.error("Error updating counter:", error);
+    const res = await fetch('/api/GetVisitorCount');
+    const data = await res.json();
+    document.getElementById('visitor-count').innerText = data.count;
+  } catch (err) {
+    console.error('Error loading visitor count:', err);
   }
 }
 
-document.addEventListener("DOMContentLoaded", updateCounter);
+window.addEventListener('DOMContentLoaded', loadVisitorCount);
