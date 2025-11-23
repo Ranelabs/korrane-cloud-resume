@@ -2,6 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {},
   "dependencies": {
     "@azure/data-tables": "^13.2.2"
   }
